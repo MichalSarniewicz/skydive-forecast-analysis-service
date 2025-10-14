@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: skydive-forecast-analysis-service
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    database-change-log-table: skydive-forecast-analysis.DATABASECHANGELOG
+    database-change-log-lock-table: skydive-forecast-analysis.DATABASECHANGELOGLOCK
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    url: /v3/api-docs.yaml
+
+server:
+  port: 8080
+
+jwt:
+  expiration: 3600000         # 1 hour (ms)
+  refresh-expiration: 604800000 # 7 days (ms)
+  secret: change-me-please-and-make-it-at-least-32-characters-long
