@@ -1,4 +1,4 @@
-package org.skydiveforecast;
+package com.skydiveforecast;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
