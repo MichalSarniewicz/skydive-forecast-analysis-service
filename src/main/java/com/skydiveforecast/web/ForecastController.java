@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/api/forecast")
+@RequestMapping("/api/analyses/forecast")
 @Tag(name = "Forecast", description = "Endpoints for getting forecasts.")
 @RequiredArgsConstructor
 public class ForecastController {

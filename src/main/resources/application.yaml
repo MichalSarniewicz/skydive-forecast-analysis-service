@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   profiles:
     active: dev
@@ -14,15 +17,10 @@ spring:
 
 springdoc:
   api-docs:
-    path: /v3/api-docs
+    path: /v3/api-docs/analyses
   swagger-ui:
     path: /swagger-ui.html
-    url: /v3/api-docs.yaml
-
-server:
-  port: 8080
+    url: /v3/api-docs/analyses.yaml
 
 jwt:
-  expiration: 3600000         # 1 hour (ms)
-  refresh-expiration: 604800000 # 7 days (ms)
   secret: change-me-please-and-make-it-at-least-32-characters-long
