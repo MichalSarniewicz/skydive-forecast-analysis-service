@@ -3,9 +3,11 @@ package com.skydiveforecast.infrastructure.weather.openmeteo;
 import com.skydiveforecast.domain.model.Forecast;
 import com.skydiveforecast.domain.model.WeatherPoint;
 import com.skydiveforecast.domain.port.WeatherForecastPort;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 import java.net.URI;
 import java.time.LocalDate;
@@ -15,9 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Slf4j
 public class OpenMeteoWeatherAdapter implements WeatherForecastPort {
 
-    private static final String BASE_URL = "https://api.open-meteo.com/v1/forecast";
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ISO_LOCAL_DATE;
 
     private final WebClient webClient;
@@ -27,6 +29,7 @@ public class OpenMeteoWeatherAdapter implements WeatherForecastPort {
     }
 
     @Override
+    @CircuitBreaker(name = "getHourlyForecast", fallbackMethod = "fallback")
     public Forecast getHourlyForecast(double latitude, double longitude, LocalDate date) {
         URI uri = buildUri(latitude, longitude, date);
         OpenMeteoResponse response = webClient.get()
@@ -66,6 +69,14 @@ public class OpenMeteoWeatherAdapter implements WeatherForecastPort {
         }
 
         return new Forecast(response.latitude, response.longitude, points);
+    }
+
+    // fallback method for getHourlyForecast
+    private Forecast fallback(double latitude, double longitude, LocalDate date, Throwable t) {
+        log.error("Fallback triggered for getHourlyForecast: {}", t.getMessage());
+
+        // Return a default Forecast object with empty weather points
+        return new Forecast(latitude, longitude, List.of());
     }
 
     private static URI buildUri(double latitude, double longitude, LocalDate date) {

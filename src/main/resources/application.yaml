@@ -24,3 +24,10 @@ springdoc:
 
 jwt:
   secret: change-me-please-and-make-it-at-least-32-characters-long
+
+resilience4j.circuitbreaker:
+  instances:
+    myService:
+      slidingWindowSize: 10
+      failureRateThreshold: 50
+      waitDurationInOpenState: 100
