@@ -1,8 +1,9 @@
-package com.skydiveforecast.infrastructure.weather.openmeteo;
+package com.skydiveforecast.infrastructure.adapter.out;
 
 import com.skydiveforecast.domain.model.Forecast;
 import com.skydiveforecast.domain.model.WeatherPoint;
-import com.skydiveforecast.domain.port.WeatherForecastPort;
+import com.skydiveforecast.domain.port.out.WeatherForecastPort;
+import com.skydiveforecast.infrastructure.adapter.in.web.dto.OpenMeteoResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;

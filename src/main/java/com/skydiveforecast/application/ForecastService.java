@@ -1,6 +1,6 @@
 package com.skydiveforecast.application;
 
-import com.skydiveforecast.domain.port.WeatherForecastPort;
+import com.skydiveforecast.domain.port.out.WeatherForecastPort;
 import com.skydiveforecast.domain.model.Forecast;
 import org.springframework.stereotype.Service;
 

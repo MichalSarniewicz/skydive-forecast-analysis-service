@@ -1,4 +1,4 @@
-package com.skydiveforecast.web;
+package com.skydiveforecast.infrastructure.adapter.in.web;
 
 import com.skydiveforecast.domain.service.AiService;
 import com.skydiveforecast.infrastructure.adapter.in.web.dto.AnalysisRequest;

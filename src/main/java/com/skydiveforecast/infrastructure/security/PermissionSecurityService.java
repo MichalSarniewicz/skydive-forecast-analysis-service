@@ -1,6 +1,6 @@
-package com.skydiveforecast.domain.service;
+package com.skydiveforecast.infrastructure.security;
 
-import com.skydiveforecast.infrastructure.security.CustomUserPrincipal;
+import com.skydiveforecast.domain.service.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;

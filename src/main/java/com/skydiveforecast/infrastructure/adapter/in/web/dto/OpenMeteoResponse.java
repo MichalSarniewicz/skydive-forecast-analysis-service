@@ -1,4 +1,4 @@
-package com.skydiveforecast.infrastructure.weather.openmeteo;
+package com.skydiveforecast.infrastructure.adapter.in.web.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

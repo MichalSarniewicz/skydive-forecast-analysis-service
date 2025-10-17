@@ -1,6 +1,6 @@
 package com.skydiveforecast.infrastructure.aop;
 
-import com.skydiveforecast.domain.service.PermissionSecurityService;
+import com.skydiveforecast.infrastructure.security.PermissionSecurityService;
 import com.skydiveforecast.infrastructure.security.PermissionSecurity;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;

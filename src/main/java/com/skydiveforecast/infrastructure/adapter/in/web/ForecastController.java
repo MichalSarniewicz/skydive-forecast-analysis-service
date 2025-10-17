@@ -1,4 +1,4 @@
-package com.skydiveforecast.web;
+package com.skydiveforecast.infrastructure.adapter.in.web;
 
 import com.skydiveforecast.application.ForecastService;
 import com.skydiveforecast.domain.model.Forecast;

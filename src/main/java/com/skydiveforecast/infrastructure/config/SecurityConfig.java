@@ -1,7 +1,7 @@
 package com.skydiveforecast.infrastructure.config;
 
 import com.skydiveforecast.domain.service.AuthService;
-import com.skydiveforecast.domain.service.JwtAuthenticationFilter;
+import com.skydiveforecast.infrastructure.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
