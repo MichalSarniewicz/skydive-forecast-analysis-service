@@ -4,6 +4,7 @@ import com.skydiveforecast.domain.model.Forecast;
 import com.skydiveforecast.domain.model.WeatherPoint;
 import com.skydiveforecast.domain.port.WeatherForecastPort;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -30,6 +31,13 @@ public class OpenMeteoWeatherAdapter implements WeatherForecastPort {
 
     @Override
     @CircuitBreaker(name = "getHourlyForecast", fallbackMethod = "fallback")
+    @Cacheable(
+            value = "getHourlyForecastCache",
+            key = "#latitude + ',' + #longitude + ',' + #date",
+            condition = "#date != null",
+            unless = "#result == null",
+            sync = true
+    )
     public Forecast getHourlyForecast(double latitude, double longitude, LocalDate date) {
         URI uri = buildUri(latitude, longitude, date);
         OpenMeteoResponse response = webClient.get()
