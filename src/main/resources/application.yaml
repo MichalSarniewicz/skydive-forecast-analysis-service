@@ -14,6 +14,20 @@ spring:
     change-log: classpath:db/changelog/db.changelog-master.xml
     database-change-log-table: skydive-forecast-analysis.DATABASECHANGELOG
     database-change-log-lock-table: skydive-forecast-analysis.DATABASECHANGELOGLOCK
+  kafka:
+    bootstrap-servers: localhost:9092  # Or your Kafka cluster
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: weather-report-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'  # For JSON deserialization
+    template:
+      default-topic: weather-report-requests
 
 springdoc:
   api-docs:
