@@ -1,6 +1,6 @@
 package com.skydiveforecast.infrastructure.adapter.in.web;
 
-import com.skydiveforecast.application.ForecastService;
+import com.skydiveforecast.application.service.ForecastService;
 import com.skydiveforecast.domain.model.Forecast;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

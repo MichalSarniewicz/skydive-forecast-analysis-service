@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Expert Zone",
+    "city": "Wroclaw",
+    "latitude": 51.1079,
+    "longitude": 17.0385,
+    "isWingsuitFriendly": true
+  },
+  {
+    "id": 2,
+    "name": "Standard Zone",
+    "city": "Poznan",
+    "latitude": 52.4064,
+    "longitude": 16.9252,
+    "isWingsuitFriendly": false
+  }
+]

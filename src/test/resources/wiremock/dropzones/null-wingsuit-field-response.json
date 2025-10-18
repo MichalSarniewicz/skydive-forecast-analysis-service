@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Unknown Zone",
+    "city": "Lodz",
+    "latitude": 51.7592,
+    "longitude": 19.4560,
+    "isWingsuitFriendly": null
+  }
+]

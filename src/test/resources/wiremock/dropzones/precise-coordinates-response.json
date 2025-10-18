@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Precise Location Zone",
+    "city": "Szczecin",
+    "latitude": 53.428544,
+    "longitude": 14.552812,
+    "isWingsuitFriendly": true
+  }
+]

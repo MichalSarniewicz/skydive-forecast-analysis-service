@@ -52,3 +52,9 @@ resilience4j.circuitbreaker:
       slidingWindowSize: 10
       failureRateThreshold: 50
       waitDurationInOpenState: 100
+
+location:
+  service:
+    url: http://localhost:8083
+    connection-timeout: 5000
+    read-timeout: 5000

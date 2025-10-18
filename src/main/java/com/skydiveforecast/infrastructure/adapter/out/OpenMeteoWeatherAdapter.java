@@ -32,13 +32,12 @@ public class OpenMeteoWeatherAdapter implements WeatherForecastPort {
 
     @Override
     @CircuitBreaker(name = "getHourlyForecast", fallbackMethod = "fallback")
-    @Cacheable(
-            value = "getHourlyForecastCache",
-            key = "#latitude + ',' + #longitude + ',' + #date",
-            condition = "#date != null",
-            unless = "#result == null",
-            sync = true
-    )
+//    @Cacheable( TODO configure cache
+//            value = "getHourlyForecastCache",
+//            key = "#latitude + ',' + #longitude + ',' + #date",
+//            condition = "#date != null",
+//            sync = true
+//    )
     public Forecast getHourlyForecast(double latitude, double longitude, LocalDate date) {
         URI uri = buildUri(latitude, longitude, date);
         OpenMeteoResponse response = webClient.get()

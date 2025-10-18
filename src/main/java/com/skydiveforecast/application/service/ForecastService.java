@@ -1,4 +1,4 @@
-package com.skydiveforecast.application;
+package com.skydiveforecast.application.service;
 
 import com.skydiveforecast.domain.port.out.WeatherForecastPort;
 import com.skydiveforecast.domain.model.Forecast;

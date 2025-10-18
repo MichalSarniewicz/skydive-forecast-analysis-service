@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Minimal Dropzone",
+    "city": "Gdansk",
+    "latitude": 54.3520,
+    "longitude": 18.6466,
+    "isWingsuitFriendly": null
+  }
+]

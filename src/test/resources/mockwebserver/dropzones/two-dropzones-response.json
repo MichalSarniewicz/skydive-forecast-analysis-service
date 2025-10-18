@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Skydive Warsaw",
+    "city": "Warsaw",
+    "latitude": 52.2297,
+    "longitude": 21.0122,
+    "isWingsuitFriendly": true
+  },
+  {
+    "id": 2,
+    "name": "Skydive Krakow",
+    "city": "Krakow",
+    "latitude": 50.0647,
+    "longitude": 19.9450,
+    "isWingsuitFriendly": false
+  }
+]
